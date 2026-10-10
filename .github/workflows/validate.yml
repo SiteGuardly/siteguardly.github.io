@@ -1,0 +1,25 @@
+name: Validate portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required files
+        run: test -f index.html && test -f styles.css && test -f script.js && test -f assets/siteguardly-mark.png
+      - name: Check for accidental secrets
+        run: |
+          if grep -RIE '(api[_-]?key|client[_-]?secret|password)[[:space:]]*[:=][[:space:]]*[^[:space:]]+' --exclude-dir=.git .; then
+            echo 'Possible secret-like assignment found.'
+            exit 1
+          fi
+
