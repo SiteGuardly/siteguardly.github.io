@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ontdek drie manieren om met je merk in de wereld van Roblox te stappen. Bekijk het interactieve 3D-ontwerp van Orbit Arcade.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1413a2">
+  <title>Orbit Arcade — Jouw merk wordt speelbaar</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./scene.js" defer></script>
+  <script src="./main.js" defer></script>
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'; connect-src 'none'; base-uri 'none'; object-src 'none'">
+</head>
+<body>
+  <a class="skip" href="#main">Direct naar de inhoud</a>
+  <header class="mast">
+    <a class="wordmark" href="#main" aria-label="Orbit Arcade, start"><span class="symbol" aria-hidden="true">✦</span><span>ORBIT<br>ARCADE</span></a>
+    <nav aria-label="Hoofdmenu">
+      <a href="#wereld">De wereld</a><a href="#cases">Cases</a><a href="#studio">De studio</a>
+    </nav>
+    <a class="pill pill-light" href="#aanvraag">Start een campagne <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero" id="wereld" aria-labelledby="title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true"></span> Ontwerpconcept voor een gamestudio</p>
+          <h1 id="title"><span>Jouw merk</span><br>wordt<br><em>speelbaar.</em></h1>
+          <p class="hero-intro">Van een plek in onze games tot een wereld die helemaal van jouw merk is. Ontdek waar jouw volgende Roblox-campagne begint.</p>
+          <a class="pill pill-mint" href="#aanvraag">Start een campagne <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="game-stage" aria-label="Interactieve 3D-wereld">
+          <div class="stage-label"><span></span> SPEELEILAND <b>·</b> 3D DEMO</div>
+          <canvas id="orbital" aria-label="Draaibaar speeleiland met drie campagnelocaties"></canvas>
+          <div class="stage-controls" aria-label="Draai het speeleiland">
+            <button type="button" data-turn="-1" aria-label="Draai naar links">↶</button>
+            <button type="button" data-turn="1" aria-label="Draai naar rechts">↷</button>
+          </div>
+          <p class="stage-tip">Sleep om te draaien</p>
+        </div>
+      </div>
+      <div class="route-strip">
+        <span class="route-caption">Kies een<br>campagnevorm</span>
+        <div class="route-buttons" role="group" aria-label="Campagnevormen">
+          <button type="button" data-route="0" aria-pressed="true"><span>01</span> In-game advertenties <b aria-hidden="true">↗</b></button>
+          <button type="button" data-route="1" aria-pressed="false"><span>02</span> Eigen branded game <b aria-hidden="true">↗</b></button>
+          <button type="button" data-route="2" aria-pressed="false"><span>03</span> Creators &amp; community <b aria-hidden="true">↗</b></button>
+        </div>
+      </div>
+    </section>
+    <section class="route-detail" aria-labelledby="route-title">
+      <div class="route-detail-inner">
+        <div class="route-description" aria-live="polite">
+          <span id="route-nr" class="route-number" aria-hidden="true">01</span>
+          <div><h2 id="route-title">Midden in het spel</h2><p id="route-copy">Een herkenbaar billboard, merkobject of activatie in een bestaande game. Kies een plek die past bij hoe spelers die wereld ontdekken.</p></div>
+        </div>
+        <div class="route-links"><a id="route-case" href="#cases">Bekijk voorbeeldcase <span aria-hidden="true">↓</span></a><a id="route-apply" class="pill pill-dark" href="#aanvraag">Bespreek deze route <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <p class="eyebrow"><span aria-hidden="true"></span> Merken &amp; bereik</p>
+        <h2 id="proof-title">Spelen is pas<br>het <em>begin.</em></h2>
+        <div class="proof-partners" aria-label="Sectoren van merkpartners">
+          <span>Speelgoed<span aria-hidden="true">✱</span></span><span>Entertainment<span aria-hidden="true">✦</span></span><span>Food<span aria-hidden="true">✶</span></span>
+        </div>
+        <p class="evidence-note">Voorbeeldsectoren voor een fictieve gamestudio.</p>
+        <div class="metric-band">
+          <article><strong>Game-<br>bezoeken</strong><p>Voorbeeld van een plek voor het aantal maandelijkse bezoeken aan de games.</p></article>
+          <article><strong>Live<br>spelers</strong><p>Ruimte voor een actueel inzicht in gelijktijdige spelers.</p></article>
+          <article><strong>Groeps-<br>leden</strong><p>Groepsleden zijn een voorbeeld van bereik binnen de community.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="cases wrap" aria-labelledby="cases-title">
+      <div class="cases-top">
+        <div><p class="eyebrow"><span aria-hidden="true"></span> Campagnes in beeld</p><h2 id="cases-title">Het <em>playbook.</em></h2></div>
+        <p>Drie voorbeeldcampagnes laten zien hoe je straks gamebeeld en resultaten naast elkaar presenteert.</p>
+      </div>
+      <div class="case-switch" role="group" aria-label="Voorbeeldcases">
+        <button type="button" data-case="0" aria-pressed="true">01. Neon Run</button>
+        <button type="button" data-case="1" aria-pressed="false">02. Candy Quest</button>
+        <button type="button" data-case="2" aria-pressed="false">03. Creator Drop</button>
+      </div>
+      <article class="case-panel">
+        <div class="case-image" id="case-art">
+          <img data-case-image src="./media/skate.webp" alt="Illustratief gamebeeld van een futuristisch skatepark" width="768" height="512" loading="lazy">
+          <img data-case-image src="./media/candy.webp" alt="Illustratief gamebeeld van een kleurrijke hindernisbaan" width="768" height="512" loading="lazy" hidden>
+          <img data-case-image src="./media/creator.webp" alt="Illustratief gamebeeld van een digitale studio voor avatars" width="768" height="512" loading="lazy" hidden>
+          <span class="illustration">VOORBEELDCAMPAGNE</span>
+        </div>
+        <div class="case-copy" aria-live="polite">
+          <span class="case-type" id="case-type">In-game advertenties</span>
+          <h3 id="case-name">Neon Run</h3>
+          <p id="case-description">Een digitaal billboard aan een populaire route en een verzamelitem dat spelers onderweg kunnen vinden.</p>
+          <dl class="case-metrics">
+            <div><dt>Spelers</dt><dd>—</dd></div><div><dt>Speeltijd</dt><dd>—</dd></div><div><dt>Waardering</dt><dd>—</dd></div>
+          </dl>
+          <p class="evidence-note">Resultaatvelden voor cijfers uit echte campagnes.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="process" aria-labelledby="process-title">
+      <div class="wrap">
+        <h2 id="process-title">Van briefing<br>naar <em>launch.</em></h2>
+        <ol>
+          <li><span>01</span><div><h3>Kennismaking &amp; doel</h3><p>We bespreken je doelgroep, de campagnevorm en wat je wilt bereiken.</p></div></li>
+          <li><span>02</span><div><h3>Concept &amp; bouw</h3><p>Je ziet hoe het merk een logische plek krijgt in de gamewereld.</p></div></li>
+          <li><span>03</span><div><h3>Lancering &amp; promotie</h3><p>We spreken af hoe de campagne live gaat en welke resultaten je terugziet.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="studio" class="studio wrap" aria-labelledby="studio-title">
+      <div class="team-image"><img src="./media/team.webp" alt="Illustratieve foto van drie makers in een gamestudio" width="768" height="512" loading="lazy"><span class="illustration">SFEERBEELD</span></div>
+      <div><p class="eyebrow"><span aria-hidden="true"></span> De makers</p><h2 id="studio-title">De studio<br>achter <em>het spel.</em></h2><p>Een team van gamebouwers, ontwerpers en campagnemakers. Voor je eerste campagne denken we mee over het format, de productie en de lancering.</p><a class="pill pill-dark" href="#aanvraag">Vertel ons je idee <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section id="aanvraag" class="apply" aria-labelledby="apply-title">
+      <div class="wrap apply-inner">
+        <div><p class="eyebrow"><span aria-hidden="true"></span> Voor merken en mediabureaus</p><h2 id="apply-title">Jouw merk.<br><em>Jouw move.</em></h2><p>Vertel ons in vier korte stappen wat je wilt bereiken. De studio kan dan meteen meedenken over een passend concept.</p></div>
+        <div class="wizard">
+          <div class="progress" aria-label="Voortgang"><span id="form-progress">Stap 1 van 4</span><progress id="form-bar" max="4" value="1">1 van 4</progress></div>
+          <form id="intake">
+            <fieldset data-step="0"><legend>Merk en doelgroep</legend><label>Naam van je merk of bureau<input name="brand" autocomplete="organization" required></label><label>Welke doelgroep wil je bereiken?<input name="audience" placeholder="Bijv. gezinnen en jonge gamers" required></label></fieldset>
+            <fieldset data-step="1" hidden><legend>Wat wil je bereiken?</legend><label>Doel<select name="objective" required><option value="">Kies een doel</option><option value="reach">Meer bereik</option><option value="campaign">Een merkcampagne</option><option value="game">Een eigen game</option></select></label><label>Campagnevorm<select name="route"><option value="">Ik wil advies</option><option value="0">In-game advertenties</option><option value="1">Eigen branded game</option><option value="2">Creators &amp; community</option></select></label></fieldset>
+            <fieldset data-step="2" hidden><legend>Budget en startmoment</legend><label>Budgetindicatie<select name="budget" required><option value="">Selecteer een indicatie</option><option>Budget nog in overleg</option><option>Tot €5.000</option><option>€5.000 tot €15.000</option><option>€15.000 of meer</option></select></label><label>Wanneer wil je starten?<input name="timing" placeholder="Bijv. volgend kwartaal" required></label></fieldset>
+            <fieldset data-step="3" hidden><legend>Hoe bereiken we je?</legend><label>Contactpersoon<input name="name" required autocomplete="name"></label><label>Zakelijk e-mailadres<input name="email" type="email" required autocomplete="email"></label></fieldset>
+            <div class="form-actions"><button type="button" class="back" id="form-back" hidden>← Terug</button><button type="submit" class="pill pill-mint" id="form-next">Volgende <span aria-hidden="true">→</span></button></div>
+            <p class="demo-note">Demo. Ingevoerde gegevens worden alleen op dit scherm gebruikt.</p>
+          </form>
+          <div id="form-success" hidden tabindex="-1">
+            <h3>Je intake is klaar.</h3><p>Zo ziet de bevestiging eruit. Bij de echte website kan de bezoeker hier direct een gesprek boeken.</p>
+            <button type="button" class="pill pill-mint" id="schedule" aria-expanded="false" aria-controls="booking-example">Bekijk afspraakvoorbeeld <span aria-hidden="true">↗</span></button>
+            <div id="booking-example" hidden><h4>Kennismaking over je campagne</h4><p>Een gesprek van 30 minuten. Hier komt de agenda van de studio.</p></div>
+            <button type="button" class="back reset" id="form-reset">Start de demo opnieuw</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><a class="wordmark" href="#main" aria-label="Orbit Arcade, naar boven"><span class="symbol" aria-hidden="true">✦</span><span>ORBIT<br>ARCADE</span></a><p>Zelfstandig ontwerpconcept van <a href="https://siteguardly.com/">SiteGuardly</a></p><a href="#main">Naar boven ↑</a></div></footer>
+</body>
+</html>

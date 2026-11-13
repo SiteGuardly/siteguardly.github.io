@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102820">
+  <meta name="description" content="Probeer onafhankelijke websiteconcepten van SiteGuardly, van een draaibaar 3D-speeleiland tot een educatieve webshop en een interactieve transportroute.">
+  <title>Eigen ontwerpconcepten | SiteGuardly</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --forest: #102820;
+      --pine: #1d4738;
+      --paper: #f2f2e8;
+      --green: #dcfb94;
+      --ink: #172820;
+      --line: #c2cabe;
+      --muted: #45584c;
+      --gutter: clamp(1.15rem, 4vw, 4rem);
+      font-family: system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid #07765e; outline-offset: 5px; }
+    .on-dark :focus-visible { outline-color: var(--green); }
+    .skip { position: absolute; top: 0; padding: .65rem 1rem; background: var(--green); color: var(--forest); transform: translateY(-110%); z-index: 3; }
+    .skip:focus { transform: translateY(0); }
+    .width { width: min(84rem, calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+    header, .hero, footer { background: var(--forest); color: #f2f6ed; }
+    nav { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; border-bottom: 1px solid #6c887f66; }
+    .brand { font-weight: 770; letter-spacing: -.04em; font-size: 1.2rem; text-decoration: none; }
+    .brand span { color: var(--green); }
+    .languages { display: flex; gap: .15rem; border: 1px solid #92a99d; border-radius: 99rem; padding: .2rem; }
+    .languages a { border-radius: 99rem; display: grid; place-items: center; min-width: 2.65rem; min-height: 2.25rem; text-decoration: none; font-size: .82rem; font-weight: 750; }
+    .languages [aria-current="true"] { background: var(--green); color: var(--forest); }
+    .hero .width { min-height: clamp(21rem, 45vw, 36rem); display: grid; grid-template-columns: 1fr minmax(15rem, 35%); align-items: end; gap: 2rem; padding-block: clamp(3rem, 9vw, 8rem) clamp(3.5rem, 7vw, 6rem); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(2.5rem, 6.5vw, 6.8rem); line-height: .82; letter-spacing: -.09em; font-weight: 760; }
+    h1 em { display: block; }
+    h1 em { color: var(--green); font: italic 400 1.08em/.9 Georgia, serif; letter-spacing: -.095em; }
+    .hero p { max-width: 32ch; font-size: clamp(1.05rem, 1.82vw, 1.35rem); line-height: 1.5; }
+    .hero-copy { display: grid; align-content: end; gap: 1.35rem; }
+    .jump { font-weight: 700; text-underline-offset: .3em; width: fit-content; }
+    .section { padding-block: clamp(3.8rem, 8vw, 7.5rem); }
+    .section-top { display: grid; grid-template-columns: 1fr minmax(15rem, 35%); align-items: end; gap: 2rem; margin-bottom: 2rem; }
+    h2 { font-size: clamp(2.25rem, 5.5vw, 4.75rem); line-height: .9; letter-spacing: -.08em; font-weight: 740; }
+    .section-top p, .card p, .text p { line-height: 1.55; color: var(--muted); }
+    .featured { display: grid; grid-template-columns: 1.35fr 1fr; gap: .85rem; }
+    .card { display: flex; flex-direction: column; border-radius: 1.15rem; overflow: hidden; border: 1px solid var(--line); background: #f9faf0; }
+    .card.orbit { grid-row: span 2; }
+    .art { min-height: 10.65rem; display: grid; place-items: center; position: relative; isolation: isolate; overflow: hidden; }
+    .art-orbit { position: relative; background: #3021af url("./orbit-skate.webp") center/cover; flex: 1 1 auto; min-height: 21rem; }
+    .art-orbit::before { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, #2a1d9f55, transparent 46%, #16014c44); z-index: -1; }
+    .art-orbit strong { color: #f2ff79; background: #28206a; padding: .3em .55em; font-size: clamp(1.8rem, 5vw, 5rem); line-height: .8; letter-spacing: -.09em; transform: rotate(-8deg); font-weight: 900; }
+    .art-books { background: #ffd478; }
+    .book { position: absolute; left: 50%; top: 17%; width: 5.4rem; height: 7.2rem; display: grid; align-content: end; padding: .55rem .4rem; color: #102820; font-weight: 800; background: #a8d8e8; border-left: .3rem solid #244e66; border-radius: .15rem .4rem .4rem .15rem; box-shadow: 0 .5rem .7rem #29150230; transform: translateX(-15%) rotate(9deg); }
+    .book:first-child { background: #f7f0ae; border-color: #9a4b39; transform: translateX(-91%) translateY(5%) rotate(-14deg); }
+    .art-transport { background: radial-gradient(ellipse at 60% 7%, #4c79a1, transparent 60%), #183755; }
+    .route { width: min(56%, 16rem); height: 5rem; border-top: 4px dashed #f4f9fd; border-right: 4px dashed #f4f9fd; border-bottom: 4px dashed #f4f9fd; border-radius: 2.2rem 2.2rem 2.2rem 0; transform: rotate(-11deg); }
+    .route::before, .route::after { content: ""; width: 1rem; aspect-ratio: 1; background: #ffcc54; border-radius: 50%; position: absolute; left: -.3rem; top: -.55rem; box-shadow: 0 0 0 .35rem #ffcc543f; }
+    .route::after { top: auto; bottom: -.6rem; }
+    .card .body { display: grid; gap: .65rem; padding: clamp(1.1rem, 3vw, 2.05rem); }
+    .card h3, summary strong { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.05; letter-spacing: -.055em; }
+    .card.orbit h3 { font-size: clamp(2rem, 5vw, 4rem); }
+    .launch { margin-top: .35rem; border-radius: 4rem; display: inline-flex; gap: 1rem; align-items: center; width: fit-content; min-height: 2.8rem; padding: .45rem .8rem .45rem 1.1rem; background: var(--forest); color: #fff; font-weight: 720; text-decoration: none; }
+    .launch:hover { background: var(--pine); }
+    .launch span:last-child { border-radius: 50%; color: var(--forest); background: var(--green); width: 1.7rem; height: 1.7rem; display: grid; place-items: center; }
+    .index { padding-top: 0; }
+    .shelf { border-top: 1px solid var(--line); display: grid; }
+    details { border-bottom: 1px solid var(--line); }
+    summary { display: grid; grid-template-columns: minmax(6rem, 15%) 1fr auto; gap: 1rem; align-items: center; cursor: pointer; padding: 1.35rem .3rem; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary > span:first-child { font-size: .82rem; font-weight: 680; color: var(--muted); }
+    summary::after { content: "+"; border: 1px solid var(--line); display: grid; place-items: center; border-radius: 50%; width: 2.15rem; height: 2.15rem; font-size: 1.45rem; }
+    details[open] summary::after { content: "−"; }
+    summary:hover { background: #e8eddf; }
+    .text { max-width: 58ch; margin: 0 .5rem 1.4rem max(6.5rem, 16%); }
+    footer .width { min-height: 8rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.35rem; }
+    footer a { text-underline-offset: .3em; }
+    @media (max-width: 700px) {
+      .hero .width, .section-top, .featured { grid-template-columns: 1fr; gap: 1.2rem; }
+      .hero .width { min-height: 0; }
+      h1 { font-size: clamp(1.8rem, 9.3vw, 4.05rem); }
+      .hero-copy { gap: .9rem; }
+      .card.orbit { grid-row: auto; }
+      .art-orbit { min-height: 16rem; }
+      summary { grid-template-columns: 1fr auto; gap: .25rem .7rem; }
+      summary > span:first-child { grid-column: 1; grid-row: 1; }
+      summary strong { grid-column: 1; grid-row: 2; }
+      summary::after { grid-column: 2; grid-row: span 2; }
+      .text { margin-left: .3rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main" data-en="Skip to content">Direct naar inhoud</a>
+  <header class="on-dark">
+    <nav class="width" aria-label="SiteGuardly">
+      <a class="brand" href="https://siteguardly.com/projecten/">Site<span>Guardly</span></a>
+      <div class="languages" aria-label="Language">
+        <a href="?lang=nl" lang="nl" hreflang="nl" aria-label="Nederlands" aria-current="true">NL</a>
+        <a href="?lang=en" lang="en" hreflang="en" aria-label="English">EN</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero on-dark">
+      <div class="width">
+        <h1><span data-en="Independent">Eigen</span> <em data-en="design concepts">ontwerpconcepten</em></h1>
+        <div class="hero-copy">
+          <p data-en="Explore nine SiteGuardly concepts. Try how a visitor discovers a website, chooses a product or starts an enquiry.">Ontdek negen ontwerpconcepten van SiteGuardly. Probeer hoe een bezoeker een website verkent, een product kiest of een aanvraag start.</p>
+          <a class="jump" href="#demos" data-en="Try the demos ↓">Probeer de demo’s ↓</a>
+        </div>
+      </div>
+    </section>
+    <section id="demos" class="section width">
+      <div class="section-top">
+        <h2 data-en="Try the experience">Zelf uitproberen</h2>
+        <p data-en="These are independent design demonstrations. The content is illustrative, and forms, bookings and purchases are simulated.">Deze voorbeelden zijn zelfstandige demonstraties van ontwerp en techniek. De inhoud is illustratief. Formulieren, boekingen en bestellingen zijn simulaties.</p>
+      </div>
+      <div class="featured">
+        <article class="card orbit">
+          <div class="art art-orbit" aria-hidden="true"><strong>ORBIT<br>ARCADE</strong></div>
+          <div class="body">
+            <h3>Orbit Arcade</h3>
+            <p data-en="Rotate the floating island and use three clickable locations to explore how brands might start a campaign. Each location opens a route and an example case. A four-step form takes visitors from exploration to an enquiry.">Draai het speeleiland en ontdek via drie aanklikbare locaties hoe merken een campagne kunnen starten. Elke locatie opent een bijpassende campagneroute en voorbeeldcase. Een intake in vier stappen laat zien hoe een bezoeker van ontdekking naar een zakelijke aanvraag gaat.</p>
+            <a class="launch" href="../public-demos/orbit-arcade/"><span data-en="Open Orbit Arcade">Open Orbit Arcade</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="art art-books" aria-hidden="true"><span class="book" data-en="Maths safari">Rekensafari</span><span class="book" data-en="Reading mission">Leesmissie</span></div>
+          <div class="body">
+            <h3 data-en="Books for young learners">Boekjes voor groep 3 t/m 8</h3>
+            <p data-en="A friendly catalogue lets parents and teachers find books and bundles by age group and subject. Try selecting example products and filling a basket.">Een kindvriendelijke, overzichtelijke catalogus helpt ouders en leerkrachten boekjes en bundels te vinden op groep en vak. Voorbeeldproducten en een winkelmand maken de kooproute tastbaar.</p>
+            <a class="launch" href="../public-demos/kinderboekjes/"><span data-en="Try the shop">Probeer de webshop</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="art art-transport" aria-hidden="true"><span class="route"></span></div>
+          <div class="body">
+            <h3 data-en="From loading to delivery">Van laadklep tot losadres</h3>
+            <p data-en="An interactive map takes visitors through full loads, part loads and urgent transport. Each stop explains the service and carries the choice into a sample enquiry.">Een interactieve routekaart leidt langs volle lading, deellading en spoedtransport. De gekozen halte licht het aanbod toe en neemt de selectie mee naar een proefaanvraag.</p>
+            <a class="launch" href="../public-demos/transport/"><span data-en="Explore the route">Verken de route</span><span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section index width">
+      <div class="section-top">
+        <h2 data-en="Explore the other concepts">Meer ontwerpconcepten</h2>
+        <p data-en="Select a concept to read about the visitor journey it explores.">Open een concept en lees welk bezoekerspad het uitwerkt.</p>
+      </div>
+      <div class="shelf">
+        <details>
+          <summary><span data-en="Youth support">Jeugdhulp</span><strong data-en="A first step towards youth support">Een eerste stap naar jeugdhulp</strong></summary>
+          <div class="text"><p data-en="An inviting website with illustrated routes for young people, parents and referrers. Plain language, large buttons and a clear explanation help visitors prepare for a first meeting.">Een uitnodigende website met geïllustreerde routes voor jongeren, ouders en verwijzers. Heldere taal, grote knoppen en een overzichtelijke uitleg helpen bezoekers om een eerste gesprek voor te bereiden.</p><a class="launch" href="../public-demos/jeugdhulp/"><span data-en="Explore the routes">Bekijk de routes</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+        <details>
+          <summary><span>Consultancy</span><strong data-en="Attractions and guest experience">Consultancy voor attracties en gastbeleving</strong></summary>
+          <div class="text"><p data-en="An interactive expertise map and challenge navigator show how storytelling, design, technology and operations fit together. Visitors start with their own question to discover relevant expertise.">Een interactieve expertisekaart en een vraagstuknavigator maken zichtbaar hoe verhaal, ontwerp, techniek en operatie samenkomen. De bezoeker begint bij een eigen vraag en vindt van daaruit passende expertise.</p><a class="launch" href="../public-demos/consultancy/"><span data-en="Try the challenge navigator">Probeer de vraagstuknavigator</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+        <details>
+          <summary><span data-en="E-commerce">Webshop</span><strong data-en="From farm to table">Van erf naar tafel</strong></summary>
+          <div class="text"><p data-en="Two routes bring together the farm’s story and a practical way to shop. Visitors can browse sample items, fill a basket and try the checkout flow.">Twee ingangen brengen het verhaal achter de boerderij en een praktische winkelroute samen. Bezoekers kunnen voorbeeldproducten bekijken, een winkelmand vullen en het proefbestelproces uitproberen.</p><a class="launch" href="../public-demos/boerderij/"><span data-en="Open the farm shop">Open de boerderijwinkel</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+        <details>
+          <summary><span data-en="Landscaping">Tuinontwerp</span><strong data-en="Tuinveld garden design">Tuinveld · tuinontwerp en aanleg</strong></summary>
+          <div class="text"><p data-en="An image-led website lets visitors discover gardens and landscaping examples. Project photography and a focused enquiry flow help visitors share a plan for their own garden.">Een rustige beeldsite laat bezoekers tuinen en aanlegvoorbeelden ontdekken. Projectfoto’s en een gerichte aanvraagroute helpen om een eigen tuinplan voor te leggen.</p><a class="launch" href="../public-demos/tuinveld/"><span data-en="View the garden concept">Bekijk het tuinconcept</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+        <details>
+          <summary><span data-en="Craft">Ambacht</span><strong data-en="Atelier Vouw · jewellery and goldsmithing">Atelier Vouw · sieraden en goudsmeden</strong></summary>
+          <div class="text"><p data-en="Large detail shots make room for the jewellery and the craft. Two routes show visitors how to discuss a bespoke piece or find and book a course.">Grote detailbeelden geven sieraden en ambacht de ruimte. Twee bezoekersroutes laten zien hoe iemand een sieraad op maat kan bespreken of een cursus kan vinden en boeken.</p><a class="launch" href="../public-demos/atelier-vouw/"><span data-en="Visit the atelier">Bezoek het atelier</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+        <details>
+          <summary><span>Personal branding</span><strong data-en="Short-form content studio">Studio voor short-form content</strong></summary>
+          <div class="text"><p data-en="A concept for a fictional content studio with vertical campaign previews and illustrative cases. The page reveals work in chapters as you scroll and keeps contact within reach.">Een interactieve website voor een fictief contentbureau waarin staande campagnebeelden en voorbeeldcases centraal staan. Een scrollroute onthult het werk in hoofdstukken. Een duidelijke contactmogelijkheid is zichtbaar tijdens het verkennen.</p><a class="launch" href="../public-demos/short-form/"><span data-en="Explore Studio Kader">Verken Studio Kader</span><span aria-hidden="true">↗</span></a></div>
+        </details>
+      </div>
+    </section>
+  </main>
+  <footer class="on-dark">
+    <div class="width">
+      <a class="brand" href="https://siteguardly.com/">Site<span>Guardly</span></a>
+      <a href="https://siteguardly.com/projecten/" data-en="View SiteGuardly projects">Bekijk SiteGuardly-projecten</a>
+    </div>
+  </footer>
+  <script>
+    const locale = new URLSearchParams(window.location.search).get('lang');
+    if (locale === 'en') {
+      document.documentElement.lang = 'en';
+      document.title = 'Independent design concepts | SiteGuardly';
+      document.querySelectorAll('[data-en]').forEach((item) => {
+        item.textContent = item.dataset.en;
+      });
+      document.querySelectorAll('.languages a').forEach((link) => {
+        link.setAttribute('aria-current', String(link.lang === 'en'));
+      });
+      document.querySelectorAll('a[href="https://siteguardly.com/projecten/"]').forEach((link) => {
+        link.href = 'https://siteguardly.com/en/projects/';
+      });
+    }
+  </script>
+</body>
+</html>
